@@ -6,11 +6,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box mb-0 d-sm-flex align-items-center justify-content-between">
-                    <h2 class="mb-sm-0 m-0 font-size-18 page-title">Extended Periode</h2>
+                    <h2 class="mb-sm-0 m-0 font-size-18 page-title">Vendor</h2>
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
-                            <li class="breadcrumb-item">Extended Periode</li>
+                            <li class="breadcrumb-item">Vendor</li>
                             <li class="breadcrumb-item active">Lists</li>
                         </ol>
                     </div>
@@ -30,7 +30,7 @@
                                             <span id="dlength"></span>
                                         </div>
                                         <div class="col-12 col-sm-12">
-                                            <a href="/extend/new" class="btn btn-md btn-primary btn-float" style="margin-top:;">Add New</a>
+                                            <a href="/vendor/new" class="btn btn-md btn-primary btn-float" style="margin-top:;">Add New</a>
                                         </div>
                                         <div class="col-12 col-sm-12 mt-4">
                                             <span id="dfilter"></span>
@@ -50,13 +50,13 @@
                                     <thead class="table-light">
                                         <tr>
                                             <th width="10">#</th>
-                                            <th width="90">Action</th>
-                                            <th width="120">Contract/PO</th>
+                                            <th width="135">Action</th>
+                                            <th width="140">Contract</th>
                                             <th width="250">Company</th>
-                                            <th width="450">Operation</th>
-                                            <th width="120">Type</th>
-                                            <th width="120">Periode</th>
-                                            <th width="140">Date Request</th>
+                                            <th width="420">Description</th>
+                                            <th width="120">Start Periode</th>
+                                            <th width="120">End Periode</th>
+                                            <th width="120">Date</th>
                                             <th width="90">Status</th>
                                         </tr>
                                     </thead>
@@ -72,5 +72,5 @@
 @endsection
 
 @section('script')
-@include('admin.extended.script')
+@include('admin.vendor.script')
 @endsection

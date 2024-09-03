@@ -6,16 +6,16 @@
                 pageLength: 25,
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('extend.index') }}",
+                ajax: "{{ route('vendor.index') }}",
                 columns: [
                     {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                     {data: 'aksi', name: 'aksi', orderable: false, searchable: false},
-                    {data: 'number_contract', name: 'number_contract'},
+                    {data: 'contract', name: 'contract'},
                     {data: 'company', name: 'company'},
-                    {data: 'work_detail', name: 'work_detail'},
-                    {data: 'type_contract', name: 'type_contract'},
-                    {data: 'periode', name: 'periode'},
-                    {data: 'date_request', name: 'date_request'},
+                    {data: 'description', name: 'description'},
+                    {data: 'periode_start', name: 'periode_start'},
+                    {data: 'periode_end', name: 'periode_end'},
+                    {data: 'date', name: 'date'},
                     {data: 'status', name: 'status'},
                 ]
             });

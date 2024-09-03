@@ -6,11 +6,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box mb-0 d-sm-flex align-items-center justify-content-between">
-                    <h2 class="mb-sm-0 m-0 font-size-18 page-title">Extended Periode</h2>
+                    <h2 class="mb-sm-0 m-0 font-size-18 page-title">Vendor</h2>
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
-                            <li class="breadcrumb-item">Extended Periode</li>
+                            <li class="breadcrumb-item">Vendor</li>
                             <li class="breadcrumb-item active">Form</li>
                         </ol>
                     </div>
@@ -25,7 +25,7 @@
                         <div class="col-xl-8 col-sm-12">
                             <h4 class="card-title">{{ (@$data->id == '') ? 'Create':'Edit' }}</h4>
                             <p class="card-title-desc">Please fill out the form below completely. </p>
-                            <form action="/extend/store" method="post" class="needs-validation">
+                            <form action="/vendor/store" method="post" class="needs-validation">
                                 @csrf
                                 <input type="hidden" name="id" class="form-control" id="id" value="{{ @$data->id }}">
                                 <div class="row mb-4">
@@ -105,13 +105,15 @@
                                 <div class="row justify-content-end">
                                     <div class="col-sm-9">
                                         <button type="submit" class="btn btn-primary w-md">Simpan</button>
-                                        <a href="/extend" class="btn btn-light w-md">Kembali</a>
+                                        <a href="/vendor" class="btn btn-light w-md">Kembali</a>
                                     </div>
                                 </div>
+
                             </form>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

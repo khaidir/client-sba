@@ -94,6 +94,16 @@ Route::group([
         $router->get('delete/{id}', 'AccessExtendedController@destroy')->name('extend.delete');
     });
 
+    Route::group([
+        'prefix' => 'vendor',
+    ], function ($router) {
+        $router->get('/', 'VendorController@index')->name('vendor.index');
+        $router->get('new', 'VendorController@create')->name('vendor.add');
+        $router->post('store', 'VendorController@store')->name('vendor.store');
+        $router->get('edit/{id}', 'VendorController@edit')->name('vendor.edit');
+        $router->get('delete/{id}', 'VendorController@destroy')->name('vendor.delete');
+    });
+
     $router->get('statistic', 'StatisticController@index')->name('statistic.index');
     $router->get('report', 'ReportController@index')->name('report.index');
 

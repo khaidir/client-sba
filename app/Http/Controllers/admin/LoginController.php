@@ -76,7 +76,7 @@ class LoginController extends Controller
             $kredensil = $request->only('email','password');
             if (Auth::attempt($kredensil)) {
                 DB::commit();
-                return redirect()->intended('/dashboard')->with(['success' => 'Anda berhasil masuk']);
+                return redirect()->intended('/dashboard')->with(['success' => 'Logged successfully']);
             } else {
                 $request->session()->flush();
                 Auth::logout();
