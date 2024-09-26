@@ -11,10 +11,48 @@ Route::group([
 ], function ($router) {
     Route::group([
     ], function ($router) {
-        Route::get('/', 'LandingController@index');
-        // Route::get('hubungi', 'LandingController@hubungi');
+        Route::get('/', 'LoginController@index');
+        Route::get('/signin', 'LoginController@index');
+        Route::get('/signup', 'RegisterController@index');
+        Route::get('/signout', 'LoginController@logout')->name('signout');
+        //POST
+        Route::post('register/process', 'RegisterController@process');
+        Route::post('login/process', 'LoginController@process');
+
     });
 });
+
+Route::group([
+    'middleware' => ['auth'],
+    'namespace' => 'App\Http\Controllers\landing',
+], function ($router) {
+
+    Route::group([
+        'prefix' => 'landing',
+    ], function ($router) {
+        Route::get('/', 'LandingController@index')->name('user.dashboard');
+        Route::get('about', 'LandingController@about')->name('user.about');
+        Route::get('contact', 'LandingController@contact')->name('user.contact');
+        Route::get('faq', 'LandingController@faq')->name('user.faq');
+    });
+    
+    Route::group([
+        'prefix' => 'landing/biodata',
+    ], function ($router) {
+        $router->get('/', 'BiodataController@index')->name('biodata');
+        $router->post('store', 'BiodataController@store')->name('biodata.store');
+    });
+
+    Route::group([
+        'prefix' => 'landing/company',
+    ], function ($router) {
+        $router->get('/', 'CompanyController@index')->name('company');
+        $router->post('store', 'CompanyController@store')->name('company.store');
+    });
+
+});
+
+// ===================================================================
 
 Route::group([
     'namespace' => 'App\Http\Controllers\admin',
