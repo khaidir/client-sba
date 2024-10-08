@@ -17,8 +17,14 @@ class MasterCompany extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'user_id',
         'company',
         'description',
+        'address',
+        'phone',
+        'email',
+        'website',
+        'contract',
         'contract',
         'periode_start',
         'periode_end',
